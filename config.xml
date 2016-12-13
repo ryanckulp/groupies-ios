@@ -6,6 +6,8 @@
   <content src="index.html"/>
   <access origin="*"/>
   <allow-navigation href="http://www.groupies.io/*"/>
+  <allow-navigation href="tel:*" />
+  <allow-navigation href="mailto:*" />
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
   <allow-intent href="tel:*"/>

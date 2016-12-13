@@ -26,14 +26,17 @@
       <ion-content class="padding" style="text-align: center">
         <img src="assets/img/groupies-ios-icon.png"><br>
 
-        <label>
-          Please enter your 6-Digit Code:
-          <input class="item" type="text" id="confirmation-code">
-        </label>
+        <div ng-controller="ContactsController">
+          <label>
+            Please enter your 6-Digit Code:
+            <input class="item" type="text" id="confirmation-code" ng-model="code" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+          </label>
 
-        <button class="button button-full button-positive" id="import-contacts" style="background: #43cea2" ng-click="getAllContacts()" disabled >
-          Import Contacts
-        </button>
+          <button class="button button-full button-positive" id="import-contacts" style="background: #43cea2" ng-click="getAllContacts()" disabled>
+            Import Contacts
+          </button>
+        </div>
+
         <!-- <button class="button button-full button-positive" ng-click="pingServer()">
           Ping the Server
         </button> -->
@@ -54,8 +57,6 @@
 
       // ux for patience
       document.getElementById('import-contacts').addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
         console.log('disabling import button...');
 
         this.setAttribute('disabled', true);

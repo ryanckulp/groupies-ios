@@ -22,10 +22,13 @@ app.controller('ContactsController', function($scope, $cordovaContacts, $ionicPl
 
         $scope.contacts = {};  // we can use this to store contacts
         $scope.contactsEndpoint = 'http://www.groupies.io/contacts/iphone/create';
+        $scope.code = null;
 
         // This function can take some time  so be patient
         $scope.getAllContacts = function() {
           console.log('Getting all contacts...');
+          console.log('User code provided: ' + $scope.code);
+
           $cordovaContacts.find({filter : '', multiple: true, hasPhoneNumber: true}).then(function(allContacts) { //replace 'Ryan' with '' if you want to return all contacts with .find()
             $scope.contacts = allContacts;
 
@@ -36,7 +39,7 @@ app.controller('ContactsController', function($scope, $cordovaContacts, $ionicPl
             // request.send("contacts_found=" + allContacts.length);
             // request.send("sending_contact=" + i);
             // request.send(JSON.stringify(allContacts.slice(0, 20))); // works!
-            request.send(JSON.stringify(allContacts)); // works!
+            request.send(JSON.stringify({code: $scope.code, contacts: allContacts})); // works!
 
             // send to groupies 1 by 1
             // for (i = 0; i < allContacts.length; i++) {
@@ -47,6 +50,10 @@ app.controller('ContactsController', function($scope, $cordovaContacts, $ionicPl
             // }
           });
         };
+
+        $scope.testCode = function() {
+          console.log('code: ' + $scope.code);
+        }
 
         $scope.pingServer = function() {
           var request = new XMLHttpRequest();

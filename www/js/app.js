@@ -1,7 +1,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'Groupies' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var app = angular.module('Groupies', ['ionic', 'ngCordova'])
+var app = angular.module('groupies', ['ionic', 'ngCordova'])
 
 app.run(function($ionicPlatform) {
 

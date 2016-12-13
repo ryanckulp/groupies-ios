@@ -86,7 +86,7 @@
             "PACKAGE_NAME": "io.ionic.starter"
         },
         "ionic-plugin-deploy": {
-            "PACKAGE_NAME": "com.ionicframework.blankapp727708"
+            "PACKAGE_NAME": "com.ionicframework.groupies727708"
         }
     },
     "dependent_plugins": {},

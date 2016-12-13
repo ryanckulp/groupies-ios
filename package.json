@@ -1,7 +1,7 @@
 {
-  "name": "ionic-hello-world",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "name": "Groupies",
+  "author": "Ryan Kulp",
+  "homepage": "https://www.groupies.io/",
   "private": true,
   "scripts": {
     "ionic:build": "ionic-app-scripts build",
@@ -45,5 +45,5 @@
       "locator": "ios"
     }
   ],
-  "description": "blankApp: An Ionic project"
+  "description": "artists, text your fans"
 }

@@ -21,7 +21,7 @@ app.controller('ContactsController', function($scope, $cordovaContacts, $ionicPl
     $ionicPlatform.ready(function() {
 
         $scope.contacts = {};  // we can use this to store contacts
-        $scope.contactsEndpoint = 'https://8c1363c2.ngrok.io/contacts/iphone/create';
+        $scope.contactsEndpoint = 'http://www.groupies.io/contacts/iphone/create';
 
         // This function can take some time  so be patient
         $scope.getAllContacts = function() {

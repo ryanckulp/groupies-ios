@@ -20,17 +20,49 @@
   <body ng-controller="ContactsController">
     <ion-pane>
       <ion-header-bar class="bar-stable">
-        <h1 class="title">Import Fans to Groupies</h1>
+        <h1 class="title">Groupies</h1>
       </ion-header-bar>
-      <ion-content class="padding">
-        <h3>Input the 6-digit Code</h3>
-        <button class="button button-full button-positive" style="background: #43cea2" ng-click="getAllContacts()">
+
+      <ion-content class="padding" style="text-align: center">
+        <img src="assets/img/groupies-ios-icon.png"><br>
+
+        <label>
+          Please enter your 6-Digit Code:
+          <input class="item" type="text" id="confirmation-code">
+        </label>
+
+        <button class="button button-full button-positive" id="import-contacts" style="background: #43cea2" ng-click="getAllContacts()" disabled >
           Import Contacts
         </button>
         <!-- <button class="button button-full button-positive" ng-click="pingServer()">
           Ping the Server
         </button> -->
+
+        <small id="import-notice" hidden>It may take around a minute for your contacts to import. Please <a href="http://www.groupies.io/login" target="_blank">log into your Groupies account</a> for a status update.</small>
       </ion-content>
     </ion-pane>
+    <script>
+
+      // light form validation
+      document.getElementById('confirmation-code').addEventListener('keyup', function() {
+        if (this.value.length == 6) {
+          document.getElementById('import-contacts').removeAttribute('disabled');
+        } else {
+          document.getElementById('import-contacts').setAttribute('disabled', true);
+        }
+      })
+
+      // ux for patience
+      document.getElementById('import-contacts').addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('disabling import button...');
+
+        this.setAttribute('disabled', true);
+        this.innerHTML = 'Importing...';
+
+        document.getElementById('import-notice').removeAttribute('hidden');
+      })
+    </script>
   </body>
 </html>

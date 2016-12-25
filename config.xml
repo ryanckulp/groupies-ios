@@ -5,7 +5,7 @@
   <author email="hello@groupies.io" href="https://www.groupies.io">Groupies Team</author>
   <content src="index.html"/>
   <access origin="*"/>
-  <allow-navigation href="http://www.groupies.io/*"/>
+  <allow-navigation href="https://www.groupies.io/*"/>
   <allow-navigation href="tel:*" />
   <allow-navigation href="mailto:*" />
   <allow-intent href="http://*/*"/>
